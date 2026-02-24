@@ -2,35 +2,64 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-background border-t border-gold py-12">
-      <div className="container mx-auto px-6 text-center">
-        <h3 className="font-display text-2xl font-bold text-gold-gradient mb-3">Manmohan Chains</h3>
-        <p className="font-body text-muted-foreground mb-6 tracking-wide">
-          Experience the art of fine jewellery craftsmanship
-        </p>
+    <footer className="bg-warm-dark py-16 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Brand */}
+          <div>
+            <h3 className="font-serif text-2xl text-primary-foreground mb-3">
+              Manmohan <span className="text-primary">Chains</span>
+            </h3>
+            <p className="font-sans text-sm text-primary-foreground/50 leading-relaxed">
+              Experience the art of fine jewellery craftsmanship. Premium quality gold chains since 2003.
+            </p>
+          </div>
 
-        <div className="flex items-center justify-center gap-4 mb-8">
-          {[
-            { href: "https://www.instagram.com/manmohanchains", label: "Instagram" },
-            { href: "https://wa.me/919662798854", label: "WhatsApp" },
-            { href: "tel:+919662798854", label: "Phone" },
-          ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:-translate-y-1 font-body text-xs tracking-wider"
-              aria-label={link.label}
-            >
-              {link.label[0]}
-            </a>
-          ))}
+          {/* Quick links */}
+          <div>
+            <h4 className="font-sans text-xs tracking-[0.3em] uppercase text-primary mb-4">Navigate</h4>
+            <ul className="space-y-3">
+              {["Home", "Heritage", "Collections", "Craft", "Contact"].map((link) => (
+                <li key={link}>
+                  <button
+                    onClick={() =>
+                      document.querySelector(`#${link.toLowerCase()}`)?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="font-sans text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+                  >
+                    {link}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-sans text-xs tracking-[0.3em] uppercase text-primary mb-4">Contact</h4>
+            <div className="space-y-3">
+              <a href="tel:+919662798854" className="block font-sans text-sm text-primary-foreground/60 hover:text-primary transition-colors">
+                +91 9662798854
+              </a>
+              <a href="mailto:manmohanchains@gmail.com" className="block font-sans text-sm text-primary-foreground/60 hover:text-primary transition-colors">
+                manmohanchains@gmail.com
+              </a>
+              <a href="https://www.instagram.com/manmohanchains" target="_blank" rel="noopener noreferrer" className="block font-sans text-sm text-primary-foreground/60 hover:text-primary transition-colors">
+                @manmohanchains
+              </a>
+            </div>
+          </div>
         </div>
 
-        <p className="font-body text-sm text-muted-foreground">
-          © {year} Manmohan Chains. All rights reserved.
-        </p>
+        {/* Bottom */}
+        <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-sans text-xs text-primary-foreground/40">
+            © {year} Manmohan Chains. All rights reserved.
+          </p>
+          <p className="font-sans text-xs text-primary-foreground/30">
+            Premium Gold Jewellery — Since 2003
+          </p>
+        </div>
       </div>
     </footer>
   );
