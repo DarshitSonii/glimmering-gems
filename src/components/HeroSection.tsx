@@ -3,17 +3,8 @@ import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col">
-      {/* Top marquee */}
-      <div className="bg-warm-dark overflow-hidden py-3">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="mx-8 font-sans text-xs tracking-[0.3em] uppercase text-primary-foreground/70">
-              Premium Gold Chains &nbsp;✦&nbsp; Since 2003 &nbsp;✦&nbsp; Handcrafted Excellence &nbsp;✦&nbsp; 22K Certified &nbsp;✦&nbsp;
-            </span>
-          ))}
-        </div>
-      </div>
+    <section id="home" className="relative min-h-screen flex flex-col pt-[88px]">
+      {/* pt accounts for marquee + navbar height */}
 
       {/* Main hero */}
       <div className="flex-1 grid lg:grid-cols-2 min-h-[90vh]">
