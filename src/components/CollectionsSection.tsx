@@ -1,6 +1,7 @@
 import collectionImg from "@/assets/collection-flat.png";
 import heroImg from "@/assets/hero-jewelry.png";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -98,15 +99,13 @@ const CollectionsSection = () => {
               our collection has something for every taste. Each chain undergoes rigorous quality checks and comes
               with our hallmark purity certification.
             </p>
-            <a
-              href="https://www.manmohanchains.in"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/collections"
               className="inline-flex items-center gap-3 bg-warm-gradient text-primary-foreground px-8 py-4 rounded-full font-sans text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:-translate-y-1 shadow-warm hover:shadow-warm-lg"
             >
               View All Collections
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
